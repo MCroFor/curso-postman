@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "0610fe79-134d-4fa2-9724-ac17c6bfc961",
+		"name": "2_login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27840758"
+	},
+	"item": [
+		{
+			"name": "Login success",
+			"item": [
+				{
+					"name": "signup - success",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"function firstName(){\r",
+									"\t\r",
+									"\tlet firstName = [ \"William\",\"Maria\",\"João\",\"Ana\",\"Pedro\",\"Carla\",\"Lucas\",\"Mariana\",\"Paulo\",\"Camila\",\"Rafael\",\"Juliana\",\"Gustavo\",\"Larissa\",\"Fernando\",\"Amanda\",\"Diego\",\"Isabela\",\"Ricardo\",\"Natália\",\"Henrique\",\"Lívia\",\"Roberto\",\"Sofia\",\"Eduardo\",\"Vitória\",\"Fábio\",\"Mariana\",\"André\",\"Letícia\",\"Rodrigo\",\"Lara\",\"Guilherme\",\"Bianca\",\"Miguel\",\"Alice\",\"Leonardo\",\"Laura\",\"Daniel\",\"Beatriz\",\"Felipe\",\"Luiza\",\"Arthur\",\"Helena\",\"Gabriel\",\"Valentina\",\"Bernardo\",\"Sophia\",\"Vitor\",\"Clara\",\"Francisco\",\"Yasmin\",\"Enzo\",\"Isabel\",\"Isabella\",\"Lorenzo\",\"Joana\",\"Samuel\",\"Melissa\",\"Otávio\",\"Ana\",\"Breno\",\"Cecília\",\"Benjamin\",\"Luana\",\"Mariane\",\"Davi\",\"Nathália\",\"Raul\",\"Isadora\",\"Marcelo\",\"Luna\",\"Nicolas\",\"Laís\",\"Augusto\",\"Stella\",\"Ruan\",\"Gabriela\",\"Luciano\",\"Evelyn\",\"Thiago\",\"Lorena\",\"Vinícius\",\"Catarina\",\"Murilo\",\"Pietra\",\"Tomás\",\"Carolina\",\"Caio\",\"Manuela\",\"Emanuelly\",\"Lavinia\",\"Lucca\",\"Mirella\",\"Kevin\",\"Rebeca\",\"Anthony\",\"Júlia\"];\r",
+									"\r",
+									"\tlet randomItem = firstName[Math.floor(Math.random() * firstName.length)];\r",
+									"\r",
+									"\treturn randomItem;\r",
+									"}\r",
+									"\r",
+									"pm.environment.set(\"FirstName\", firstName());\r",
+									"\r",
+									"function lastName(){\r",
+									"\t\r",
+									"\tlet lastName = [\"Silva\",\"Santos\",\"Oliveira\",\"Souza\",\"Rodrigues\",\"Almeida\",\"Costa\",\"Pereira\",\"Carvalho\",\"Ferreira\",\"Gomes\",\"Martins\",\"Rocha\",\"Ribeiro\",\"Alves\",\"Lima\",\"Sousa\",\"Fernandes\",\"Pinto\",\"Cunha\",\"Mendes\",\"Barbosa\",\"Saraiva\",\"Machado\",\"Cardoso\",\"Nogueira\",\"Ramos\",\"Coelho\",\"Araújo\",\"Castro\",\"Fonseca\",\"Rocha\",\"Moreira\",\"Figueiredo\",\"Gonçalves\",\"Monteiro\",\"Marques\",\"Peixoto\",\"Morais\",\"Lopes\",\"Vieira\",\"Tavares\",\"Correia\",\"Neves\",\"Nunes\",\"Cavalcanti\",\"Andrade\",\"Freitas\",\"Coutinho\",\"Rezende\",\"Macedo\",\"Borges\",\"Barros\",\"Melo\",\"Barbosa\",\"Campos\",\"Lemos\",\"Braga\",\"Teixeira\",\"Dias\",\"Albuquerque\",\"Sampaio\",\"Moura\",\"Rocha\",\"Silveira\",\"Aguiar\",\"Abreu\",\"Lima\",\"Pacheco\",\"Vargas\",\"Farias\",\"Moraes\",\"Ferreira\",\"Gusmão\",\"Sousa\",\"Azevedo\",\"Dantas\",\"Cavalcante\",\"Batista\",\"Peixoto\",\"Pires\",\"Leite\",\"Ramos\",\"Macedo\",\"Sales\",\"Carneiro\",\"Monteiro\",\"Goulart\",\"Cruz\",\"Fialho\",\"Xavier\",\"Prado\",\"Valente\",\"Furtado\",\"Vieira\"];\r",
+									"\r",
+									"\tlet randomItem = lastName[Math.floor(Math.random() * lastName.length)];\r",
+									"\r",
+									"\treturn randomItem;\r",
+									"}\r",
+									"\r",
+									"pm.environment.set(\"LastName\", lastName());\r",
+									"\r",
+									"pm.environment.set(\"FullName\", pm.variables.get(\"FirstName\")+ \" \" + pm.variables.get(\"LastName\"));\r",
+									"\r",
+									"\r",
+									"\r",
+									"function accessProfile(){\r",
+									"\t\r",
+									"\tvar accessProfile = [\"ADMIN\", \"TI\", \"ADMINISTRAÇÃO\", \"CONSULTORIA\", \"GESTÃO\", \"FINANCEIRO\"];\r",
+									"\r",
+									"\tvar randomItem = accessProfile[Math.floor(Math.random() * accessProfile.length)];\r",
+									"\r",
+									"\treturn randomItem;\r",
+									"}\r",
+									"\r",
+									"pm.environment.set(\"AccessProfile\", accessProfile());\r",
+									"\r",
+									"\r",
+									"\r",
+									"function providerMail(){\r",
+									"\t\r",
+									"\tlet providerMail = [\"@gmail.com\",\"@hotmail.com\",\"@yahoo.com\",\"@outlook.com\",\"@aol.com\",\"@icloud.com\",\"@protonmail.com\",\"@gmx.com\",\"@mail.com\",\"@zoho.com\",\"@yandex.com\",\"@live.com\",\"@rocketmail.com\",\"@fastmail.com\",\"@tutanota.com\",\"@inbox.com\",\"@me.com\",\"@rediffmail.com\",\"@sbcglobal.net\",\"@cox.net\",\"@yahoo.co.uk\",\"@att.net\",\"@mail.ru\",\"@optonline.net\",\"@ymail.com\",\"@outlook.com.br\",\"@live.com.mx\",\"@gmx.de\",\"@web.de\",\"@yahoo.com.br\",\"@yandex.ru\",\"@hotmail.fr\",\"@hotmail.co.uk\",\"@yahoo.fr\",\"@outlook.es\",\"@mail.ru\",\"@orange.fr\",\"@libero.it\",\"@hotmail.it\",\"@yahoo.it\",\"@o2.pl\",\"@wp.pl\",\"@interia.pl\",\"@onet.pl\",\"@seznam.cz\",\"@abv.bg\",\"@gmx.at\",\"@gmx.ch\",\"@bluewin.ch\",\"@inbox.lv\",\"@rambler.ru\",\"@mail.bg\",\"@yahoo.ca\",\"@hotmail.ca\",\"@bell.net\",\"@hotmail.com.au\",\"@yahoo.com.au\",\"@t-online.de\",\"@arcor.de\",\"@cox.net\",\"@verizon.net\",\"@yahoo.de\",\"@hotmail.de\",\"@wanadoo.fr\",\"@live.fr\",\"@gmx.fr\",\"@mail.be\",\"@telenet.be\",\"@hotmail.be\",\"@yahoo.co.in\",\"@live.in\",\"@rediffmail.com\",\"@hotmail.in\",\"@indiatimes.com\",\"@yahoo.co.id\",\"@hotmail.co.id\",\"@yahoo.com.sg\",\"@outlook.sg\",\"@hotmail.com.sg\",\"@yahoo.com.ph\",\"@yahoo.com.vn\",\"@yahoo.com.ar\",\"@yahoo.com.mx\",\"@yahoo.com.co\",\"@yahoo.com.pe\",\"@yahoo.com.ve\",\"@yahoo.com.ec\",\"@yahoo.com.bo\",\"@yahoo.com.gt\",\"@yahoo.com.do\",\"@yahoo.com.pa\",\"@yahoo.com.hk\",\"@yahoo.com.tw\",\"@yahoo.com.cn\",\"@yahoo.co.jp\",\"@yahoo.co.kr\",\"@yahoo.co.th\",\"@yahoo.com.my\",\"@yahoo.com.sa\",\"@yahoo.ae\",\"@yahoo.co.il\",\"@yahoo.com.tr\",\"@yahoo.com.eg\",\"@yahoo.com.ng\",\"@yahoo.co.za\",\"@yahoo.com.au\",\"@yahoo.com.nz\",\"@yahoo.com.ph\",\"@yahoo.com.vn\"];\r",
+									"\r",
+									"\tlet randomItem = providerMail[Math.floor(Math.random() * providerMail.length)];\r",
+									"\r",
+									"\treturn randomItem;\r",
+									"}\r",
+									"\r",
+									"pm.environment.set(\"ProviderMail\", providerMail());\r",
+									"\r",
+									"pm.environment.set(\"Mail\", pm.environment.get(\"FirstName\")+ \"_\" + pm.variables.replaceIn('{{$guid}}') + pm.environment.get(\"ProviderMail\"));\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Ckeck token exist\", function (){\r",
+									"    pm.expect(JSON.parse(responseBody).token).to.exist;\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Ckeck fullName exist\", function (){\r",
+									"    pm.expect(pm.environment.get(\"FullName\")).to.eql(JSON.parse(responseBody).user.fullName);\r",
+									"}) \r",
+									"\r",
+									"pm.test(\"Ckeck mail exist\", function (){\r",
+									"    pm.expect(pm.environment.get(\"Mail\")).to.eql(JSON.parse(responseBody).user.mail);\r",
+									"}) \r",
+									"\r",
+									"pm.test(\"Ckeck accessProfile exist\", function (){\r",
+									"    pm.expect(pm.environment.get(\"AccessProfile\")).to.eql(JSON.parse(responseBody).user.accessProfile);\r",
+									"}) \r",
+									"\r",
+									"pm.test(\"Ckeck status true\", function (){\r",
+									"    pm.expect(true).to.eql(JSON.parse(responseBody).user.status);\r",
+									"}) "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"fullName\": \"{{FullName}}\", \r\n\t\"mail\": \"{{Mail}}\", \r\n\t\"password\": \"{{Password}}\", \r\n\t\"confirmPassword\": \"{{Password}}\",\r\n\t\"accessProfile\": \"{{AccessProfile}}\"\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login - success",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Ckeck token exist\", function (){\r",
+									"    pm.expect(JSON.parse(responseBody).token).to.exist;\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Ckeck fullName exist\", function (){\r",
+									"    pm.expect(pm.environment.get(\"FullName\")).to.eql(JSON.parse(responseBody).user.fullName);\r",
+									"}) \r",
+									"\r",
+									"pm.test(\"Ckeck mail exist\", function (){\r",
+									"    pm.expect(pm.environment.get(\"Mail\")).to.eql(JSON.parse(responseBody).user.mail);\r",
+									"}) \r",
+									"\r",
+									"pm.test(\"Ckeck accessProfile exist\", function (){\r",
+									"    pm.expect(pm.environment.get(\"AccessProfile\")).to.eql(JSON.parse(responseBody).user.accessProfile);\r",
+									"}) \r",
+									"\r",
+									"pm.test(\"Ckeck status true\", function (){\r",
+									"    pm.expect(true).to.eql(JSON.parse(responseBody).user.status);\r",
+									"}) \r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mail\": \"{{Mail}}\",\r\n    \"password\": \"{{Password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
